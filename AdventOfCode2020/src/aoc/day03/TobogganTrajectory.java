@@ -13,11 +13,11 @@ public class TobogganTrajectory {
 		int posX = 3, numRows = myListString.size(), numCols = myListString.get(0).length(), count = 0; 
 		
 		//Part one
-		for(int i = 0; i < numRows - 1; i++ ) {	
+		/*for(int i = 0; i < numRows - 1; i++ ) {	
 			count += (myListString.get(i + 1).charAt(posX) == '#') ? 1 : 0 ;
 			posX = (posX + 3 > numCols - 1) ? posX + 3 - numCols : posX + 3;
 		}
-		System.out.println("Part one count:" + count);
+		System.out.println("Part one count:" + count);*/
 		
 		//Part two
 		long result = (long) slope(1, 1, numRows, numCols, myListString) *
@@ -25,15 +25,15 @@ public class TobogganTrajectory {
 				slope(5, 1, numRows, numCols, myListString) *
 				slope(7, 1, numRows, numCols, myListString) *
 				slope(1, 2, numRows, numCols, myListString);
+		System.out.println("Part one count:" + slope(3, 1, numRows, numCols, myListString));
 		System.out.println("Part two count:" + result);
-		//System.out.println(slope(3, 1, numRows, numCols, myListString)); //Checks the slope from Part one. 
 	}
 	
-	private static int slope(int xPos, int yPos, int numRows, int numCols, ArrayList<String> myListString) {
-		int count = 0, posX = xPos;
-		for(int i = 0; i < numRows - yPos;  i = i + yPos) {	
-			count += (myListString.get(i + yPos).charAt(posX) == '#') ? 1 : 0 ;
-			posX = (posX + xPos > numCols - 1) ? posX + xPos - numCols : posX + xPos;
+	private static int slope(int xMov, int yMov, int numRows, int numCols, ArrayList<String> myListString) {
+		int count = 0, posX = xMov;
+		for(int i = 0; i < numRows - yMov;  i = i + yMov) {	
+			count += (myListString.get(i + yMov).charAt(posX) == '#') ? 1 : 0 ;
+			posX = (posX + xMov > numCols - 1) ? posX + xMov - numCols : posX + xMov;
 		}
 		return count;
 	}
