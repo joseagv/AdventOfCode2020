@@ -30,7 +30,5 @@ public class TobogganTrajectory {
 		}
 		return count;
 	}
-	
-
 
 }
