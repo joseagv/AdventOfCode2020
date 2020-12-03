@@ -14,10 +14,8 @@ public class ReportRepair {
 		boolean found = false;
 		
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
-		
 		while(sc.hasNext()) {
 			numbers.add(sc.nextInt());
-			numbers.toString();
 		}		
 		sc.close();
 		file.exists();
