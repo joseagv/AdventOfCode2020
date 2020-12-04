@@ -52,8 +52,10 @@ public class PassportProcessing {
 		}	
 		addPassport(byr, iyr, eyr, cid, hgt, hcl, ecl, pid);//For the last one.
 		byr = -1; iyr = -1; eyr = -1; hgt = ""; hcl = ""; ecl = ""; pid = ""; cid = -1;
-		System.out.println("Part one count:" + myPassPorts.size());
-		System.out.println("Part two count:" + myPassPorts.size());
+		
+		System.out.println("Part one count:" + myPassPorts.size());//Part one
+		System.out.println("Part two count:" + isValid());//Part two
+
 	}
 
 	//Part one
@@ -65,5 +67,13 @@ public class PassportProcessing {
 			entry = (cid == -1) ? new Passport(byr, iyr, eyr, hgt, hcl, ecl, pid) : new Passport(byr, iyr, eyr, hgt, hcl, ecl, pid, cid);
 			myPassPorts.add(entry);
 		}
+	}
+	
+	//Part two
+	private static int isValid() {
+		int count = 0;
+		for(Passport myPP : myPassPorts) 
+			count += (myPP.isValid()) ? 1 : 0;
+		return count;
 	}
 }
