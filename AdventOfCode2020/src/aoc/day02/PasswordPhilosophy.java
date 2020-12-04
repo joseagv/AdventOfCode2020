@@ -21,7 +21,7 @@ public class PasswordPhilosophy {
 			char charac = eachOne[1].replace(":", "").charAt(0);
 			
 			PassWord pw = new PassWord(min, max, charac , eachOne[2]);
-			count += (pw.isCorrect()) ? 1 : 0;//Part one
+			count += (pw.isCorrect()) ? 1 : 0;//Part one.
 			count2 += (pw.xOr()) ? 1 : 0;//Part two
 			
 		}		
